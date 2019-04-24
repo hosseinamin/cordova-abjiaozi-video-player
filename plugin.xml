@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<plugin xmlns="http://apache.org/cordova/ns/plugins/1.0"
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        id="com.aminbros.abjiaozi"
+        version="0.0.1">
+  <name>abjiaoziVideoPlayer</name>
+  <description>Simplified Activity, JiaoZiVideoPlayer + EPNanoHttpd for serving and saving video files, Android VideoPlayer MediaPlayer VideoView MediaView Fullscreen</description>
+  <license>GPL-2.0</license>
+  <keywords>cordova,videoplayer,downloader</keywords>
+  <repo></repo>
+  <issue></issue>
+
+  <js-module src="www/abjiaoziVideoPlayer.js" name="abjiaoziVideoPlayer">
+    <clobbers target="window.abjiaoziVideoPlayer" />
+  </js-module>
+
+  <!-- android -->
+  <platform name="android">
+    <config-file target="res/xml/config.xml" parent="/*">
+      <feature name="abjiaoziVideoPlayer" >
+        <param name="android-package" value="com.aminbros.abjiaozi.abjiaoziCordovaVideoPlayer"/>
+      </feature>
+    </config-file>
+    <config-file target="app/src/main/AndroidManifest.xml" parent="/*">
+      <uses-permission android:name="android.permission.INTERNET" />
+      <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+
+    </config-file>
+    <config-file parent="/manifest/application" target="app/src/main/AndroidManifest.xml">
+      <activity
+          android:name="com.aminbros.abjiaozi.FullscreenVideoPlayerActivity"
+          android:configChanges="orientation|screenSize|keyboardHidden"
+          android:screenOrientation="landscape"
+          android:theme="@style/Theme.AppCompat.NoActionBar"
+          />
+      <service android:name="com.aminbros.abjiaozi.EPNanoHTTPDService"/>
+    </config-file>
+    <source-file src="src/android/JzvdFullscreenStd.java" target-dir="src/com/aminbros/abjiaozi/" />
+    <source-file src="src/android/EPNanoHTTPDService.java" target-dir="src/com/aminbros/abjiaozi/" />
+    <source-file src="src/android/FullscreenVideoPlayerActivity.java" target-dir="src/com/aminbros/abjiaozi/" />
+    <source-file src="src/android/abjiaoziCordovaVideoPlayer.java" target-dir="src/com/aminbros/abjiaozi/" />
+    <framework src="build.gradle" custom="true" type="gradleReference" />
+  </platform>
+
+</plugin>

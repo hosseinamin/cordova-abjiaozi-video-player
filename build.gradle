@@ -1,0 +1,16 @@
+android {
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+}
+allprojects {
+  repositories {
+    maven { url 'https://jitpack.io' }
+  }
+}
+dependencies {
+  implementation 'com.android.support:appcompat-v7:28.+'
+  implementation 'com.github.hosseinamin:epnanohttpd:9748030'
+  implementation 'cn.jzvd:jiaozivideoplayer:7.0_preview'
+}

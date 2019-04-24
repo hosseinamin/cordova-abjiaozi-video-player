@@ -1,0 +1,28 @@
+{
+  "name": "com.aminbros.abjiaozi",
+  "version": "0.0.1",
+  "description": "Simplified Activity, JiaoZiVideoPlayer + EPNanoHttpd for serving and saving video files, Android VideoPlayer MediaPlayer VideoView MediaView Fullscreen",
+  "cordova": {
+    "id": "com.aminbros.abjiaozi",
+    "platforms": [
+      "android"
+    ]
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/hosseinamin/cordova-abjiaozi-video-player.git"
+  },
+  "keywords": [
+    "cordova",
+    "videoplayer",
+    "downloader",
+    "ecosystem:cordova",
+    "cordova-android"
+  ],
+  "author": "Hossein Amin <hossein@aminbros.com>",
+  "license": "GPL-2.0",
+  "bugs": {
+    "url": "https://github.com/hosseinamin/cordova-abjiaozi-video-player/issues"
+  },
+  "homepage": "https://github.com/hosseinamin/cordova-abjiaozi-video-player#readme"
+}
